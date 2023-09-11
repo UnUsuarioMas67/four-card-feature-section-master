@@ -22,7 +22,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://raw.githubusercontent.com/UnUsuarioMas67/four-card-feature-section-master/main/design/end-result.png)
 
 ### Links
 
