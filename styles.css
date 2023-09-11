@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    /* Primary Colors */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    /* Neutral Colors */
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+
+    /* Shadow Color */
+    --shadow-blue: hsla(212, 86%, 32%, 0.12);
+
+    /* Font Weights */
+    --wgt-200: 200;
+    --wgt-400: 400;
+    --wgt-600: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font: inherit;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--very-light-gray);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+
+    padding: 5rem 2rem;
+}
+
+.heading {
+    text-align: center;
+    max-width: 540px;
+}
+
+h1 {
+    color: var(--very-dark-blue);
+    font-size: 1.6rem;
+    font-weight: var(--wgt-200);
+
+    margin-bottom: 1rem;
+}
+
+b {
+    font-weight: var(--wgt-600);
+    font-size: 1.7rem;
+}
+
+@media (min-width: 700px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    b {
+        font-size: 2.5rem;
+    }
+}
+
+p {
+    color: var(--grayish-blue);
+}
+
+.card {
+    background-color: white;
+
+    max-width: 350px;
+
+    box-shadow: 0 1rem 1rem var(--shadow-blue);
+    padding: 1.5rem 2rem;
+
+    border-style: solid;
+    border-width: 4px 0 0 0;
+    border-radius: .3rem .3rem .5rem .5rem;
+}
+
+.card__heading {
+    color: var(--very-dark-blue);
+    font-size: 1.3rem;
+    font-weight: var(--wgt-600);
+
+    margin-bottom: 0.3rem;
+}
+
+.card__description {
+    font-size: 13px;
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 1050px) {
+    .card__heading {
+        margin-bottom: .7rem;
+    }
+
+    .card__description {
+        margin-bottom: 3rem;
+        line-height: 1.6rem;
+    }
+}
+
+.card__img {
+    float: right;
+}
+
+.supervisor-card {
+    border-color: var(--cyan);
+}
+
+.team-builder-card {
+    border-color: var(--red);
+}
+
+.karma-card {
+    border-color: var(--orange);
+}
+
+.calculator-card {
+    border-color: var(--blue);
+}
+
+.card-container {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    gap: 1.7rem;
+}
+
+@media (min-width: 700px) {
+    .supervisor-card {
+        grid-area: supervisor;
+    }
+
+    .team-builder-card {
+        grid-area: team-builder;
+    }
+
+    .karma-card {
+        grid-area: karma;
+    }
+
+    .calculator-card {
+        grid-area: calculator;
+    }
+    
+    .card-container {
+        grid-template-areas: 'supervisor team-builder'
+                             'karma calculator';
+    }
+}
+
+@media (min-width: 1050px) {
+    .card-container {
+        grid-template-areas: 'supervisor team-builder calculator'
+                             'supervisor karma calculator';
+        gap: 2rem; 
+    }
+}
